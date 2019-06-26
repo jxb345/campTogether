@@ -1,17 +1,4 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <div>
-        <p>Hello!</p>
-      </div>
-    )
-  }
-}
+import 'react-dom';
+import App from './components/App.jsx'
 
 ReactDOM.render(<App />, document.getElementById("root"));

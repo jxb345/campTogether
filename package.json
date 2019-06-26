@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "npx webpack --w",
-    "start": "nodemon server/ app.js"
+    "start": "nodemon server/app.js"
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
