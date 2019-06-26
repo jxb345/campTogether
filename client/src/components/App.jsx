@@ -34,7 +34,9 @@ class App extends React.Component {
       url: '/parkInfo',
       method: 'POST',
       data: { info: this.state },
-      success: <Tools />
+      success: () => {
+        console.log('success from server');
+      }
     })
   }
 
