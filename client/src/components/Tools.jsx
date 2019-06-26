@@ -18,7 +18,25 @@ class Tools extends React.Component {
       cookingpot: '',
       cookingpan: ''
     }
+
   }
+  render() {
+    return (
+      <div>
+        <div>
+          <label for="name">Enter Your Name</label>
+          <input type="text" name="name"></input>
+        </div>
+        <div>
+          <input type="checkbox" name="plates"
+            checked></input>
+          <label for="plates">Plates</label>
+        </div>
+      </div>
+    )
+  }
+
+
 }
 
-
+export default Tools;

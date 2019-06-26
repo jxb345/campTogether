@@ -6,7 +6,8 @@ app.use(express.static(path.resolve(__dirname, '../client/public')));
 app.use(express.urlencoded( { extended: true }));
 
 app.post('/parkInfo', (req, res) => {
-
+  console.log('req.body', req.body);
+  res.status(200);
 })
 
 app.listen(4000, () => {
