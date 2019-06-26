@@ -8,14 +8,15 @@ app.use(express.urlencoded( { extended: true }));
 
 app.post('/parkInfo', (req, res) => {
   console.log('req.body', req.body);
-  const park = req.body.park;
-  const campsite = req.body.campsite;
-  const checkIn = req.body.checkIn;
-  const checkOut = req.body.checkOut;
-  models.insertCamp(park, campsite, checkIn, checkOut, (err) => {
+  const park = req.body.info.park;
+  const campsite = req.body.info.campsite;
+  const checkIn = req.body.info.checkInDate;
+  const checkOut = req.body.info.checkOutDate;
+  console.log('checkIn', checkIn)
+  models.insertCamp(park, campsite, checkIn, checkOut, (err, results) => {
     if (err) { throw err; }
     console.log('values inserted into db');
-    res.status(200);
+    res.send('done');
   });
 })
 
