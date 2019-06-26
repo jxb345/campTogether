@@ -8,7 +8,11 @@ app.use(express.urlencoded( { extended: true }));
 
 app.post('/parkInfo', (req, res) => {
   console.log('req.body', req.body);
-  // models.insertCamp()
+  const park = req.body.park;
+  const campsite = req.body.campsite;
+  const checkIn = req.body.checkIn;
+  const checkOut = req.body.checkOut;
+  models.insertCamp(park, campsite, checkIn, checkOut);
 
   res.status(200);
 })
