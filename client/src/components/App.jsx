@@ -5,7 +5,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      parkName: '',
+      park: '',
       campsite: '',
       checkInDate: '',
       checkOutDate: ''
@@ -15,7 +15,20 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange (e) {
+    const name = event.target.name;
+
+    this.setState({
+      [name]: value
+    }, () => {
+      console.log('this.state', this.state)
+    })
+
+  }
+
   handleSubmit () {
+
+
 
 
   }
@@ -26,20 +39,20 @@ class App extends React.Component {
         <h1>CampTogether</h1>
         <form onSubmit={this.handleSubmit()}>
           <div>
-          <label for="park-name">Enter Park Name</label>
-          <input type="text" name="park-name" required></input>
+          <label for="park">Enter Park Name</label>
+          <input type="text" name="park" onChange={this.handleChange}></input>
           </div>
           <div>
           <label for="campsite-number">Enter Campsite</label>
-          <input type="text" name="campsite"></input>
+          <input type="text" name="campsite" onChange={this.handleChange}></input>
           </div>
           <div>
             <label for="start-date">Enter Check-In Date</label>
-            <input type="date" name="start-date"></input>
+            <input type="date" name="start-date" onChange={this.handleChange}></input>
           </div>
           <div>
             <label for="end-date">Enter Check-Out Date</label>
-            <input type="date" name="end-date"></input>
+            <input type="date" name="end-date" onChange={this.handleChange}></input>
           </div>
           <div>
             <input type="submit" value="Submit"></input>
