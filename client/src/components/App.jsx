@@ -1,6 +1,6 @@
 import 'react';
-import 'jquery';
 import Tools from './Tools.jsx';
+const $ = require('jquery');
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,8 @@ class App extends React.Component {
   }
 
   handleChange (e) {
-    const name = event.target.name;
+    const name = e.target.name;
+    const value = e.target.value;
 
     this.setState({
       [name]: value
@@ -32,7 +33,7 @@ class App extends React.Component {
     $.ajax({
       url: '/parkInfo',
       method: 'POST',
-      data: { info: state },
+      data: { info: this.state },
       success: <Tools />
     })
   }
@@ -41,7 +42,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>CampTogether</h1>
-        <form onSubmit={this.handleSubmit()}>
+        <form onSubmit={this.handleSubmit}>
           <div>
           <label>Enter Park Name</label>
           <input type="text" name="park" onChange={this.handleChange}></input>
@@ -52,11 +53,11 @@ class App extends React.Component {
           </div>
           <div>
             <label>Enter Check-In Date</label>
-            <input type="date" name="start-date" onChange={this.handleChange}></input>
+            <input type="date" name="checkInDate" onChange={this.handleChange}></input>
           </div>
           <div>
             <label>Enter Check-Out Date</label>
-            <input type="date" name="end-date" onChange={this.handleChange}></input>
+            <input type="date" name="checkOutDate" onChange={this.handleChange}></input>
           </div>
           <div>
             <input type="submit" value="Submit"></input>

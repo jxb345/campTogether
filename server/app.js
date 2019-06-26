@@ -1,12 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const models = require('../database/models.js')
 
 app.use(express.static(path.resolve(__dirname, '../client/public')));
 app.use(express.urlencoded( { extended: true }));
 
 app.post('/parkInfo', (req, res) => {
   console.log('req.body', req.body);
+  // models.insertCamp()
+
   res.status(200);
 })
 
