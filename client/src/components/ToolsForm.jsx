@@ -1,5 +1,6 @@
 import 'react';
-import ToolsList from './ToolsList.jsx'
+import ToolsList from './ToolsList.jsx';
+import NameForm from './NameForm.jsx';
 
 class ToolsForm extends React.Component {
   constructor(props) {
@@ -40,7 +41,6 @@ class ToolsForm extends React.Component {
     }
 
     validateCheckbox (e) {
-      console.log('checked')
       console.log('e.target.checked', e.target.checked);
       console.log('e.target.name', e.target.name);
       const tool = e.target.name;
@@ -57,10 +57,6 @@ class ToolsForm extends React.Component {
           <ToolsList />
         </div>
         <form>
-        <div>
-          <label>Enter Your Name</label>
-          <input type="text" name="name"></input>
-        </div>
         <div>
           <input type="checkbox" name="plates" onClick={this.validateCheckbox}></input>
           <label>Plates</label>

@@ -1,5 +1,6 @@
 import 'react';
 import Tools from './ToolsForm.jsx';
+import NameForm from './NameForm.jsx';
 const $ = require('jquery');
 
 class App extends React.Component {
@@ -15,19 +16,17 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderTools = this.renderTools.bind(this);
+    this.renderNameForm = this.renderNameForm.bind(this);
   }
 
   handleChange (e) {
     const name = e.target.name;
     const value = e.target.value;
-
     this.setState({
       [name]: value
     }, () => {
       console.log('this.state', this.state)
-    })
-
+    });
   }
 
   handleSubmit () {
@@ -44,9 +43,9 @@ class App extends React.Component {
     })
   }
 
-  renderTools () {
+  renderNameForm () {
     return (
-      <Tools />
+      <NameForm />
     );
   }
 
