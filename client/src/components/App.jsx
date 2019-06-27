@@ -15,6 +15,7 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderTools = this.renderTools.bind(this);
   }
 
   handleChange (e) {
@@ -38,6 +39,12 @@ class App extends React.Component {
         console.log('success from server');
       }
     })
+  }
+
+  renderTools () {
+    return (
+      <Tools />
+    );
   }
 
   render() {
