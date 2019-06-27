@@ -8,12 +8,14 @@ const insertCamp = (park, campsite, checkindate, checkoutdate, callback) => {
   });
 };
 
-const insertTools = (, callback) => {
-  const toolsQuery = '';
-  db.connection.query(toolsQuery, (err) => {
-    if (err) { throw err; }
-    callback(null)
-  })
-}
+// const insertTools = (, callback) => {
+//   const toolsQuery = '';
+//   db.connection.query(toolsQuery, (err) => {
+//     if (err) { throw err; }
+//     callback(null)
+//   })
+// }
 
-module.exports = { insertCamp }
+module.exports = { insertCamp
+  // , insertTools
+}

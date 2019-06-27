@@ -21,6 +21,7 @@ class ToolsForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validateCheckbox = this.validateCheckbox.bind(this);
 
   }
 
@@ -38,6 +39,16 @@ class ToolsForm extends React.Component {
       })
     }
 
+    validateCheckbox (e) {
+      console.log('checked')
+      console.log('e.target.checked', e.target.checked);
+      console.log('e.target.name', e.target.name);
+      const tool = e.target.name;
+      this.setState({ [tool]: 'Will' }, () => {
+        console.log('this.state', this.state);
+      })
+    }
+
 
   render() {
     return (
@@ -51,7 +62,7 @@ class ToolsForm extends React.Component {
           <input type="text" name="name"></input>
         </div>
         <div>
-          <input type="checkbox" name="plates"></input>
+          <input type="checkbox" name="plates" onClick={this.validateCheckbox}></input>
           <label>Plates</label>
         </div>
         <div>

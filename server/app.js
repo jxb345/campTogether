@@ -21,7 +21,7 @@ app.post('/parkInfo', (req, res) => {
 
 app.post('/toolsList', (req, res) => {
   console.log('req.body', req.body);
-  mode
+  models.insertTools()
 })
 
 app.listen(4000, () => {
