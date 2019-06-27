@@ -15,8 +15,13 @@ app.post('/parkInfo', (req, res) => {
   models.insertCamp(park, campsite, checkIn, checkOut, (err) => {
     if (err) { throw err; }
     console.log('values inserted into db');
-    res.send('done');
+    res.send();
   });
+});
+
+app.post('/toolsList', (req, res) => {
+  console.log('req.body', req.body);
+  mode
 })
 
 app.listen(4000, () => {

@@ -1,4 +1,5 @@
 import 'react-dom';
-import App from './components/App.jsx'
+// import App from './components/App.jsx';
+import Tools from './components/ToolsForm.jsx';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Tools />, document.getElementById("root"));

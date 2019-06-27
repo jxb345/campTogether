@@ -1,5 +1,5 @@
 import 'react';
-import Tools from './Tools.jsx';
+import Tools from './ToolsForm.jsx';
 const $ = require('jquery');
 
 class App extends React.Component {
@@ -36,7 +36,10 @@ class App extends React.Component {
       method: 'POST',
       data: { info: this.state },
       success: () => {
-        console.log('success from server');
+        console.log('success');
+      },
+      error: () => {
+        console.log('there was an error');
       }
     })
   }
