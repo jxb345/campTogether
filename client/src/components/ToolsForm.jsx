@@ -1,6 +1,7 @@
 import 'react';
 import ToolsList from './ToolsList.jsx';
 import NameForm from './NameForm.jsx';
+const $ = require('jquery');
 
 class ToolsForm extends React.Component {
   constructor(props) {
@@ -10,15 +11,16 @@ class ToolsForm extends React.Component {
       plates: '',
       utensils: '',
       napkins: '',
-      garbageBags: '',
+      garbagebags: '',
       chairs: '',
       firewood: '',
       lantern: '',
-      coffeePot: '',
-      shadeTent: '',
-      cookingUtencils: '',
-      pot: '',
-      pan: ''
+      coffeepot: '',
+      shadetent: '',
+      cookingutencils: '',
+      cookingpot: '',
+      cookingpan: '',
+      name: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,11 +28,15 @@ class ToolsForm extends React.Component {
 
   }
 
+  componentDidMount () {
+    this.setState({name: this.props.name})
+  }
+
     handleSubmit () {
       $.ajax({
         url: '/toolsList',
         method: 'POST',
-        data: { info: this.state },
+        data: { tools: this.state },
         success: () => {
           console.log('success');
         },
@@ -55,7 +61,7 @@ class ToolsForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
         <div>
           <input type="checkbox" name="plates" onClick={this.validateCheckbox}></input>
           <label>Plates</label>
@@ -69,7 +75,7 @@ class ToolsForm extends React.Component {
           <label>Napkins</label>
         </div>
         <div>
-          <input type="checkbox" name="garbageBags" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="garbagebags" onClick={this.validateCheckbox}></input>
           <label>Garbage Bags</label>
         </div>
         <div>
@@ -85,23 +91,23 @@ class ToolsForm extends React.Component {
           <label>Lantern</label>
         </div>
         <div>
-          <input type="checkbox" name="coffeePot" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="coffeepot" onClick={this.validateCheckbox}></input>
           <label>Coffee Pot</label>
         </div>
         <div>
-          <input type="checkbox" name="shadeTent" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="shadetent" onClick={this.validateCheckbox}></input>
           <label>Shade Tent</label>
         </div>
         <div>
-          <input type="checkbox" name="cookingUtensils" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="cookingutensils" onClick={this.validateCheckbox}></input>
           <label>Cooking Utensils</label>
         </div>
         <div>
-          <input type="checkbox" name="pot" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="cookingpot" onClick={this.validateCheckbox}></input>
           <label>Pot</label>
         </div>
         <div>
-          <input type="checkbox" name="pan" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="cookingpan" onClick={this.validateCheckbox}></input>
           <label>Pan</label>
         </div>
         <div>

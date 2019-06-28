@@ -22,8 +22,11 @@ app.post('/parkInfo', function (req, res) {
 })
 
 app.post('/toolsList', (req, res) => {
-  console.log('req.body', req.body);
-  models.insertTools()
+  console.log('req.body', req.body.tools);
+  models.insertTools(req.body.tools, (err, results) => {
+    if (err) { throw err; }
+    res.send(results);
+  })
 })
 
 app.listen(4000, () => {
