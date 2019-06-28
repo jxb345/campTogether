@@ -1,6 +1,8 @@
 import 'react';
 import ToolsList from './ToolsList.jsx';
+import ToolsForm from './ToolsForm.jsx';
 import Park from './Park.jsx';
+import Name from './Name.jsx';
 const $ = require('jquery');
 
 class NameForm extends React.Component {
@@ -9,6 +11,7 @@ class NameForm extends React.Component {
 
     this.state = {
       name: '',
+      renderToolsForm: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,12 +30,17 @@ class NameForm extends React.Component {
   }
 
   handleSubmit() {
-    // render tools form and pass in name=this.state.name
-    {this.renderToolsList}
-
+    this.setState({ renderToolsForm: !this.state.renderToolsForm })
   }
 
   render() {
+    let renderComponent;
+
+    if (!this.state.renderToolsForm) {
+     renderComponent = <Name handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+    } else {
+      renderComponent = <ToolsForm name={this.state.name} />
+    }
     return (
       <div>
         <div>
@@ -41,7 +49,10 @@ class NameForm extends React.Component {
         <div>
         <ToolsList name={this.state.name}/>
         </div>
-        <form onSubmit={this.handleSubmit}>
+      <div>
+        {renderComponent}
+      </div>
+        {/* <form onSubmit={this.handleSubmit}>
           <div>
           <label>Enter Your Name</label>
           <input type="text" name="name" onChange={this.handleChange}></input>
@@ -49,7 +60,7 @@ class NameForm extends React.Component {
           <div>
           <input type="submit" value="submit"></input>
           </div>
-        </form>
+        </form> */}
       </div>
     )
   }

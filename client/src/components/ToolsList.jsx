@@ -17,41 +17,41 @@ class ToolsList extends React.Component {
         </tr>
         <tr>
           <td>Plates</td>
-          <td>Jimbo</td>
+          <td></td>
           <td>Utensils</td>
-          <td>Wilma</td>
+          <td></td>
         </tr>
         <tr>
         <td>Napkins</td>
-          <td>Lacy</td>
+          <td></td>
           <td>Garbage Bags</td>
-          <td>Steve</td>
+          <td></td>
         </tr>
         <tr>
         <td>Chairs</td>
-          <td>Harry</td>
+          <td></td>
           <td>Firewood</td>
-          <td>Jill</td>
+          <td></td>
         </tr>
         <tr>
         <td>Lantern</td>
-          <td>Mary</td>
+          <td></td>
           <td>Coffee Pot</td>
-          <td>Ben</td>
+          <td></td>
 
         </tr>
         <tr>
         <td>Shade Tent</td>
-          <td>Luna</td>
+          <td></td>
           <td>Cooking Utensils</td>
-          <td>Stacey</td>
+          <td></td>
 
         </tr>
         <tr>
         <td>Pot</td>
-          <td>Fred</td>
+          <td></td>
           <td>Pan</td>
-          <td>Thompson</td>
+          <td></td>
         </tr>
         </tbody>
       </table>

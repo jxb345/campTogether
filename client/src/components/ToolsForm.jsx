@@ -53,9 +53,6 @@ class ToolsForm extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <ToolsList />
-        </div>
         <form>
         <div>
           <input type="checkbox" name="plates" onClick={this.validateCheckbox}></input>
