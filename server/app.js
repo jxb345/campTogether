@@ -14,10 +14,10 @@ app.post('/parkInfo', function (req, res) {
   const campsite = req.body.info.campsite;
   const checkIn = req.body.info.checkInDate;
   const checkOut = req.body.info.checkOutDate;
-  models.insertCamp(park, campsite, checkIn, checkOut, (err) => {
+  models.insertCamp(park, campsite, checkIn, checkOut, (err, id) => {
     if (err) { throw err; }
-    console.log('values inserted into db');
-    res.send();
+    console.log('values inserted into db', id);
+    res.send(id);
   });
 })
 

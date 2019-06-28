@@ -21,6 +21,7 @@ class ToolsForm extends React.Component {
       cookingpot: '',
       cookingpan: '',
       name: '',
+      id: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,16 +30,18 @@ class ToolsForm extends React.Component {
   }
 
   componentDidMount () {
-    this.setState({name: this.props.name})
+    this.setState({ name: this.props.name, id: this.props.id })
   }
 
     handleSubmit () {
+      console.log('this.props', this.props);
       $.ajax({
         url: '/toolsList',
         method: 'POST',
         data: { tools: this.state },
-        success: () => {
-          console.log('success');
+        success: (data) => {
+          console.log('data', data);
+          // {this.props.handleSubmit}
         },
         error: () => {
           console.log('there was an error');
@@ -47,11 +50,7 @@ class ToolsForm extends React.Component {
     }
 
     validateCheckbox (e) {
-      console.log('e.target.checked', e.target.checked);
-      console.log('e.target.name', e.target.name);
       const tool = e.target.name;
-      console.log('this.props.name', this.props);
-
       this.setState({ [tool]: this.props.name }, () => {
         console.log('this.state', this.state);
       })
@@ -61,7 +60,10 @@ class ToolsForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          this.handleSubmit();
+        }}>
         <div>
           <input type="checkbox" name="plates" onClick={this.validateCheckbox}></input>
           <label>Plates</label>

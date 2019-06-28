@@ -15,7 +15,8 @@ class App extends React.Component {
       campsite: '',
       checkInDate: '',
       checkOutDate: '',
-      renderNameForm: false
+      renderNameForm: false,
+      id: '',
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -38,9 +39,8 @@ class App extends React.Component {
       url: '/parkInfo',
       method: 'POST',
       data: { info: this.state },
-      success: () => {
-        this.setState({ renderNameForm: !this.state.renderNameForm}, () => {
-          console.log('this.state after submit', this.state);
+      success: (data) => {
+        this.setState({ renderNameForm: !this.state.renderNameForm, id: data[0].id }, () => {
         })
       },
       error: () => {
@@ -50,11 +50,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('rendering!', this.state.renderNameForm);
     let renderComponent;
-
     if (this.state.renderNameForm) {
-      renderComponent = <NameForm parkInfo={this.state} />
+      renderComponent = <NameForm id={this.state.id} parkInfo={this.state} />
     } else {
       renderComponent = <ParkInfoForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
     }

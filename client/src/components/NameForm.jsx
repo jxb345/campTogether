@@ -39,7 +39,7 @@ class NameForm extends React.Component {
     if (!this.state.renderToolsForm) {
      renderComponent = <Name handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
     } else {
-      renderComponent = <ToolsForm name={this.state.name} />
+      renderComponent = <ToolsForm id={this.props.id} handleSubmit={this.handleSubmit} name={this.state.name} />
     }
     return (
       <div>
@@ -52,15 +52,6 @@ class NameForm extends React.Component {
       <div>
         {renderComponent}
       </div>
-        {/* <form onSubmit={this.handleSubmit}>
-          <div>
-          <label>Enter Your Name</label>
-          <input type="text" name="name" onChange={this.handleChange}></input>
-          </div>
-          <div>
-          <input type="submit" value="submit"></input>
-          </div>
-        </form> */}
       </div>
     )
   }
