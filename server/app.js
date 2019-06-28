@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const bodyParser = require('body-parser')
 const models = require('../database/models.js')
 
 app.use(express.static(path.resolve(__dirname, '../client/public')));
 app.use(express.urlencoded( { extended: true }));
+app.use(bodyParser.json());
 
-app.post('/parkInfo', (req, res) => {
+app.post('/parkInfo', function (req, res) {
   console.log('req.body', req.body);
   const park = req.body.info.park;
   const campsite = req.body.info.campsite;
@@ -17,7 +19,7 @@ app.post('/parkInfo', (req, res) => {
     console.log('values inserted into db');
     res.send();
   });
-});
+})
 
 app.post('/toolsList', (req, res) => {
   console.log('req.body', req.body);
