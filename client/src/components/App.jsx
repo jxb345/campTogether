@@ -2,6 +2,7 @@ import 'react';
 import Tools from './ToolsForm.jsx';
 import NameForm from './NameForm.jsx';
 import ToolsList from './ToolsList.jsx';
+import ParkInfoForm from './ParkInfoForm.jsx';
 const $ = require('jquery');
 const axios = require('axios');
 
@@ -19,7 +20,6 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderNameForm = this.renderNameForm.bind(this);
   }
 
   handleChange (e) {
@@ -33,12 +33,12 @@ class App extends React.Component {
   }
 
   handleSubmit () {
+    console.log('handleSubmit invoked!')
     $.ajax({
       url: '/parkInfo',
       method: 'POST',
       data: { info: this.state },
       success: () => {
-        console.log(';lkj;lj;lj;lj;ljl;j;lj;ljl;;ll;jl;jl;j');
         this.setState({ renderNameForm: !this.state.renderNameForm}, () => {
           console.log('this.state after submit', this.state);
         })
@@ -49,62 +49,20 @@ class App extends React.Component {
     });
   }
 
-  renderNameForm () {
-    console.log('inside renderNameForm')
-
-  }
-
-  // componentDidMount() {
-  //   $.ajax({
-  //     url: '/test',
-  //     method: 'get',
-  //     success: () => {
-  //       console.log('hi')
-  //     }
-
-  //   })
-  // }
-
   render() {
-
+    console.log('rendering!', this.state.renderNameForm);
     let renderComponent;
 
     if (this.state.renderNameForm) {
-        renderComponent = <NameForm parkInfo={this.state} />
+      renderComponent = <NameForm parkInfo={this.state} />
     } else {
-        renderComponent = <ToolsList />
+      renderComponent = <ParkInfoForm handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+    }
       return (
         <div>
           {renderComponent}
         </div>
-
-        // <div>
-        //   <h1>CampTogether</h1>
-        //   <form onSubmit={this.handleSubmit}>
-        //     <div>
-        //     <label>Enter Park Name</label>
-        //     <input type="text" name="park" onChange={this.handleChange}></input>
-        //     </div>
-        //     <div>
-        //     <label>Enter Campsite</label>
-        //     <input type="text" name="campsite" onChange={this.handleChange}></input>
-        //     </div>
-        //     <div>
-        //       <label>Enter Check-In Date</label>
-        //       <input type="date" name="checkInDate" onChange={this.handleChange}></input>
-        //     </div>
-        //     <div>
-        //       <label>Enter Check-Out Date</label>
-        //       <input type="date" name="checkOutDate" onChange={this.handleChange}></input>
-        //     </div>
-        //     <div>
-        //       <input type="submit" value="Submit"></input>
-        //     </div>
-        //   </form>
-        // </div>
       )
-    }
-
   }
 }
 

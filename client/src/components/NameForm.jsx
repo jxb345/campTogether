@@ -1,5 +1,6 @@
 import 'react';
-import ToolsList from './ToolsList.jsx'
+import ToolsList from './ToolsList.jsx';
+import Park from './Park.jsx';
 const $ = require('jquery');
 
 class NameForm extends React.Component {
@@ -12,7 +13,6 @@ class NameForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderToolsList = this.renderToolsList.bind(this);
   }
 
   handleChange (e) {
@@ -32,15 +32,15 @@ class NameForm extends React.Component {
 
   }
 
-  renderToolsList () {
-    return (
-      <ToolsList name={this.state.name}/>
-    )
-  }
-
   render() {
     return (
       <div>
+        <div>
+        <Park info={this.props.parkInfo}/>
+        </div>
+        <div>
+        <ToolsList name={this.state.name}/>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <div>
           <label>Enter Your Name</label>
