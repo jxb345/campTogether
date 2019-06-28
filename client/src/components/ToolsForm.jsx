@@ -10,15 +10,15 @@ class ToolsForm extends React.Component {
       plates: '',
       utensils: '',
       napkins: '',
-      garbagebags: '',
+      garbageBags: '',
       chairs: '',
       firewood: '',
       lantern: '',
-      coffeepot: '',
-      shadetent: '',
-      cookingutencils: '',
-      cookingpot: '',
-      cookingpan: ''
+      coffeePot: '',
+      shadeTent: '',
+      cookingUtencils: '',
+      pot: '',
+      pan: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,7 +44,9 @@ class ToolsForm extends React.Component {
       console.log('e.target.checked', e.target.checked);
       console.log('e.target.name', e.target.name);
       const tool = e.target.name;
-      this.setState({ [tool]: 'Will' }, () => {
+      console.log('this.props.name', this.props);
+
+      this.setState({ [tool]: this.props.name }, () => {
         console.log('this.state', this.state);
       })
     }
@@ -59,47 +61,47 @@ class ToolsForm extends React.Component {
           <label>Plates</label>
         </div>
         <div>
-          <input type="checkbox" name="utensils"></input>
+          <input type="checkbox" name="utensils" onClick={this.validateCheckbox}></input>
           <label>Utensils</label>
         </div>
         <div>
-          <input type="checkbox" name="napkins"></input>
+          <input type="checkbox" name="napkins" onClick={this.validateCheckbox}></input>
           <label>Napkins</label>
         </div>
         <div>
-          <input type="checkbox" name="garbageBags"></input>
+          <input type="checkbox" name="garbageBags" onClick={this.validateCheckbox}></input>
           <label>Garbage Bags</label>
         </div>
         <div>
-          <input type="checkbox" name="chairs"></input>
+          <input type="checkbox" name="chairs" onClick={this.validateCheckbox}></input>
           <label>Chairs</label>
         </div>
         <div>
-          <input type="checkbox" name="firewood"></input>
+          <input type="checkbox" name="firewood" onClick={this.validateCheckbox}></input>
           <label>Firewood</label>
         </div>
         <div>
-          <input type="checkbox" name="lantern"></input>
+          <input type="checkbox" name="lantern" onClick={this.validateCheckbox}></input>
           <label>Lantern</label>
         </div>
         <div>
-          <input type="checkbox" name="coffeePot"></input>
+          <input type="checkbox" name="coffeePot" onClick={this.validateCheckbox}></input>
           <label>Coffee Pot</label>
         </div>
         <div>
-          <input type="checkbox" name="shadeTent"></input>
+          <input type="checkbox" name="shadeTent" onClick={this.validateCheckbox}></input>
           <label>Shade Tent</label>
         </div>
         <div>
-          <input type="checkbox" name="cookingUtensils"></input>
+          <input type="checkbox" name="cookingUtensils" onClick={this.validateCheckbox}></input>
           <label>Cooking Utensils</label>
         </div>
         <div>
-          <input type="checkbox" name="pot"></input>
+          <input type="checkbox" name="pot" onClick={this.validateCheckbox}></input>
           <label>Pot</label>
         </div>
         <div>
-          <input type="checkbox" name="pan"></input>
+          <input type="checkbox" name="pan" onClick={this.validateCheckbox}></input>
           <label>Pan</label>
         </div>
         <div>

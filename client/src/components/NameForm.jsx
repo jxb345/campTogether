@@ -24,7 +24,7 @@ class NameForm extends React.Component {
     this.setState({
       [name]: value
     }, () => {
-      console.log('this.state', this.state)
+      console.log('this.state - handlechange', this.state)
     });
 
   }

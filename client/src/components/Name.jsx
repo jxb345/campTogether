@@ -13,7 +13,7 @@ class Name extends React.Component {
       }}>
       <div>
       <label>Enter Your Name</label>
-      <input type="text" name="name" onChange={this.handleChange}></input>
+      <input type="text" name="name" onChange={this.props.handleChange}></input>
       </div>
       <div>
       <input type="submit" value="submit"></input>
