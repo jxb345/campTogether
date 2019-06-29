@@ -8,29 +8,26 @@ class ToolsForm extends React.Component {
     super(props)
 
     this.state = {
-      plates: '',
-      utensils: '',
-      napkins: '',
-      garbagebags: '',
-      chairs: '',
-      firewood: '',
-      lantern: '',
-      coffeepot: '',
-      shadetent: '',
-      cookingutencils: '',
-      cookingpot: '',
-      cookingpan: '',
-      name: '',
-      id: ''
+      // moving the below state properties to NameForm
+        // plates: '',
+        // utensils: '',
+        // napkins: '',
+        // garbagebags: '',
+        // chairs: '',
+        // firewood: '',
+        // lantern: '',
+        // coffeepot: '',
+        // shadetent: '',
+        // cookingutencils: '',
+        // cookingpot: '',
+        // cookingpan: '',
+        // name: '',
+        // id: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.validateCheckbox = this.validateCheckbox.bind(this);
+    // this.validateCheckbox = this.validateCheckbox.bind(this);
 
-  }
-
-  componentDidMount () {
-    this.setState({ name: this.props.name, id: this.props.id })
   }
 
     handleSubmit () {
@@ -38,7 +35,8 @@ class ToolsForm extends React.Component {
       $.ajax({
         url: '/toolsList',
         method: 'POST',
-        data: { tools: this.state },
+        data: { tools: this.props.state },
+        // data: { tools: this.state },
         success: (data) => {
           console.log('data', data);
           // {this.props.handleSubmit}
@@ -49,12 +47,14 @@ class ToolsForm extends React.Component {
       })
     }
 
-    validateCheckbox (e) {
-      const tool = e.target.name;
-      this.setState({ [tool]: this.props.name }, () => {
-        console.log('this.state', this.state);
-      })
-    }
+    // moving this function to NameForm and then will pass into ToolsForm as a prop
+      // validateCheckbox (e) {
+      //   const tool = e.target.name;
+      //   this.setState({ [tool]: this.props.name }, () => {
+      //     console.log('this.props.state', this.props.state)
+      //     // console.log('this.state', this.state);
+      //   })
+      // }
 
 
   render() {
@@ -65,51 +65,51 @@ class ToolsForm extends React.Component {
           this.handleSubmit();
         }}>
         <div>
-          <input type="checkbox" name="plates" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="plates" onClick={this.props.validateCheckbox}></input>
           <label>Plates</label>
         </div>
         <div>
-          <input type="checkbox" name="utensils" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="utensils" onClick={this.props.validateCheckbox}></input>
           <label>Utensils</label>
         </div>
         <div>
-          <input type="checkbox" name="napkins" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="napkins" onClick={this.props.validateCheckbox}></input>
           <label>Napkins</label>
         </div>
         <div>
-          <input type="checkbox" name="garbagebags" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="garbagebags" onClick={this.props.validateCheckbox}></input>
           <label>Garbage Bags</label>
         </div>
         <div>
-          <input type="checkbox" name="chairs" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="chairs" onClick={this.props.validateCheckbox}></input>
           <label>Chairs</label>
         </div>
         <div>
-          <input type="checkbox" name="firewood" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="firewood" onClick={this.props.validateCheckbox}></input>
           <label>Firewood</label>
         </div>
         <div>
-          <input type="checkbox" name="lantern" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="lantern" onClick={this.props.validateCheckbox}></input>
           <label>Lantern</label>
         </div>
         <div>
-          <input type="checkbox" name="coffeepot" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="coffeepot" onClick={this.props.validateCheckbox}></input>
           <label>Coffee Pot</label>
         </div>
         <div>
-          <input type="checkbox" name="shadetent" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="shadetent" onClick={this.props.validateCheckbox}></input>
           <label>Shade Tent</label>
         </div>
         <div>
-          <input type="checkbox" name="cookingutensils" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="cookingutensils" onClick={this.props.validateCheckbox}></input>
           <label>Cooking Utensils</label>
         </div>
         <div>
-          <input type="checkbox" name="cookingpot" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="cookingpot" onClick={this.props.validateCheckbox}></input>
           <label>Pot</label>
         </div>
         <div>
-          <input type="checkbox" name="cookingpan" onClick={this.validateCheckbox}></input>
+          <input type="checkbox" name="cookingpan" onClick={this.props.validateCheckbox}></input>
           <label>Pan</label>
         </div>
         <div>

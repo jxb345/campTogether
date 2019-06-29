@@ -12,6 +12,7 @@ const insertCamp = (park, campsite, checkindate, checkoutdate, callback) => {
 };
 
 const insertTools = (list, callback) => {
+  console.log('list', list);
   let tools = [];
   for (key in list) {
     if (list[key] === list.name && key !== "name") {
@@ -28,7 +29,7 @@ const insertTools = (list, callback) => {
   const columns = tools.toString();
   const id = Number(list.id);
   console.log('values', values);
-  console.log('id', typeof id);
+  console.log('id', id);
   const toolsQuery = `INSERT into tools (${columns}) VALUES (${values}, ${id})`;
   db.connection.query(toolsQuery, (err) => {
     if (err) { throw err; }

@@ -6,6 +6,7 @@ class ToolsList extends React.Component {
     super(props)
   }
   render () {
+    console.log('this.props.state', this.props.state)
     return (
       <table>
         <tbody>
@@ -17,41 +18,41 @@ class ToolsList extends React.Component {
         </tr>
         <tr>
           <td>Plates</td>
-          <td></td>
+          <td>{this.props.state.plates}</td>
           <td>Utensils</td>
-          <td></td>
+          <td>{this.props.state.utensils}</td>
         </tr>
         <tr>
         <td>Napkins</td>
-          <td></td>
+          <td>{this.props.state.napkins}</td>
           <td>Garbage Bags</td>
-          <td></td>
+          <td>{this.props.state.garbagebags}</td>
         </tr>
         <tr>
         <td>Chairs</td>
-          <td></td>
+          <td>{this.props.state.chairs}</td>
           <td>Firewood</td>
-          <td></td>
+          <td>{this.props.state.firewood}</td>
         </tr>
         <tr>
         <td>Lantern</td>
-          <td></td>
+          <td>{this.props.state.lantern}</td>
           <td>Coffee Pot</td>
-          <td></td>
+          <td>{this.props.state.coffeepot}</td>
 
         </tr>
         <tr>
         <td>Shade Tent</td>
-          <td></td>
+          <td>{this.props.state.shadetent}</td>
           <td>Cooking Utensils</td>
-          <td></td>
+          <td>{this.props.state.cookingutensils}</td>
 
         </tr>
         <tr>
         <td>Pot</td>
-          <td></td>
+          <td>{this.props.state.cookingpot}</td>
           <td>Pan</td>
-          <td></td>
+          <td>{this.props.state.cookingpan}</td>
         </tr>
         </tbody>
       </table>

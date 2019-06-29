@@ -22,7 +22,7 @@ app.post('/parkInfo', function (req, res) {
 })
 
 app.post('/toolsList', (req, res) => {
-  console.log('req.body', req.body.tools);
+  console.log('req.body', req.body);
   models.insertTools(req.body.tools, (err, results) => {
     if (err) { throw err; }
     res.send(results);
