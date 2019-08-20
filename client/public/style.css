@@ -1,0 +1,101 @@
+.parkInfoText {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+img {
+  float: left;
+}
+
+h1 {
+  height: 40px;
+  color: darkgreen;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: solid 1px;
+  border-bottom-color: darkgreen;
+  font-size: 22px;
+  padding-top: 10px;
+  padding-left: 70px;
+}
+
+input[type=text] {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center
+}
+
+input[type=submit] {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  background-color: darkgreen;
+  color: white;
+  border: solid 2px;
+  border-color: darkgreen;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  background-color: darkgreen;
+  color: white;
+  border: solid 2px;
+  border-color: darkgreen;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+table {
+  width: 70%;
+  margin: 10px;
+}
+
+th, td {
+  padding: 15px;
+}
+
+span {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  padding: 5px;
+}
+
+.toolsForm {
+  font-weight: 400;
+  text-align: center;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-color: darkgreen;
+  margin: 5px;
+  padding: 5px;
+}
+
+.nameForm {
+ display: block;
+}

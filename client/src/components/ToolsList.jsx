@@ -8,7 +8,7 @@ class ToolsList extends React.Component {
   render () {
     console.log('this.props.state', this.props.state)
     return (
-      <table>
+      <table border="1">
         <tbody>
         <tr>
         <th>Tool</th>

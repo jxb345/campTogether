@@ -6,13 +6,13 @@ class Park extends React.Component {
   }
 
   render () {
-    console.log('this.props.info', this.props.info);
+    console.log('this.props', this.props);
     return (
       <div>
-      <h1>PARK: {this.props.info.park}</h1>
-      <h2>CAMPSITE: {this.props.info.campsite}</h2>
-      <h3>CHECK-IN: {this.props.info.checkInDate}</h3>
-      <h3>CHECK-OUT: {this.props.info.checkOutDate}</h3>
+      <span>PARK: {this.props.info.park}</span><br></br>
+      <span>CAMPSITE: {this.props.info.campsite}</span><br></br>
+      <span>CHECK-IN: {this.props.info.checkInDate}</span><br></br>
+      <span>CHECK-OUT: {this.props.info.checkOutDate}</span>
       </div>
     )
   }

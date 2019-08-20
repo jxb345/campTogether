@@ -11,8 +11,8 @@ class Name extends React.Component {
         e.preventDefault();
         this.props.handleSubmit();
       }}>
-      <div>
-      <label>Enter Your Name</label>
+      <div className="nameForm">
+      <label>Your Name</label>
       <input type="text" name="name" onChange={this.props.handleChange}></input>
       </div>
       <div>

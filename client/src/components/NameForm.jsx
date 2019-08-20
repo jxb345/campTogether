@@ -3,7 +3,6 @@ import ToolsList from './ToolsList.jsx';
 import ToolsForm from './ToolsForm.jsx';
 import Park from './Park.jsx';
 import Name from './Name.jsx';
-const $ = require('jquery');
 
 class NameForm extends React.Component {
   constructor(props) {
@@ -26,22 +25,6 @@ class NameForm extends React.Component {
       cookingpan: '',
       name: '',
       id: ''
-
-      // original ToolsForm state:
-        // plates: '',
-        // utensils: '',
-        // napkins: '',
-        // garbagebags: '',
-        // chairs: '',
-        // firewood: '',
-        // lantern: '',
-        // coffeepot: '',
-        // shadetent: '',
-        // cookingutencils: '',
-        // cookingpot: '',
-        // cookingpan: '',
-        // name: '',
-        // id: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -52,7 +35,6 @@ class NameForm extends React.Component {
   componentDidMount () {
     this.setState(
       {
-        // name: this.props.name,
         id: this.props.id }, () => {
           console.log('id', this.state.id);
         })
@@ -78,7 +60,6 @@ class NameForm extends React.Component {
     console.log('tool', tool);
     this.setState({ [tool]: this.state.name }, () => {
       console.log('this.state', this.state)
-      // console.log('this.state', this.state);
     })
   }
 
@@ -86,14 +67,23 @@ class NameForm extends React.Component {
     let renderComponent;
 
     if (!this.state.renderToolsForm) {
-     renderComponent = <Name handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+     renderComponent =
+     <Name
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+     />
     } else {
-      renderComponent = <ToolsForm id={this.props.id} handleSubmit={this.handleSubmit} validateCheckbox={this.validateCheckbox} state={this.state}
-      // name={this.state.name}
-      />
+      renderComponent =
+      <ToolsForm
+        id={this.props.id} handleSubmit={this.handleSubmit}
+        validateCheckbox={this.validateCheckbox}
+        state={this.state} info={this.props.parkInfo}
+        />
     }
     return (
       <div>
+        <h1>CampTogether</h1>
+        <img src="tent-pencil.png" atl="tent"></img>
         <div>
         <Park info={this.props.parkInfo}/>
         </div>
